@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: basf-challenge-spring
+    sql:
+        init:
+            mode: always
+
+    datasource:
+        url: jdbc:postgresql://localhost:5432/basf-challenge
+        username: user
+        password: secret
+        driver-class-name: org.postgresql.Driver

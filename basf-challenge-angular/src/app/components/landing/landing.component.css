@@ -1,0 +1,12 @@
+.landing-container {
+    padding: 25px;
+
+    .landing-title {
+
+        h2 {
+            font-size: 30px;
+        }
+
+    }
+
+}

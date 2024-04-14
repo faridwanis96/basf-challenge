@@ -1,0 +1,21 @@
+.dialog-container {
+    padding: 25px;
+
+    .dialog-title {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .dialog-form-field {
+        width: 100%;
+    }
+
+    .dialog-buttons {
+        float: right;
+
+        :last-child {
+            margin-left: 25px;
+        }
+    }
+
+}

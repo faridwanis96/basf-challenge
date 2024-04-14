@@ -1,0 +1,25 @@
+.item-list-container {
+    padding: 25px;
+
+    .item-list-title {
+
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 30px;
+        }
+
+    }
+
+
+    .mat-mdc-row .mat-mdc-cell {
+        cursor: pointer;
+    }
+
+    .mat-mdc-row:hover .mat-mdc-cell {
+        background-color: lightgray;
+    }
+}
+
+

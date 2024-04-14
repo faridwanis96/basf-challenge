@@ -1,0 +1,42 @@
+<div class="dialog-container">
+    <div class="dialog-title">
+        <mat-label>{{ getDialogTitle() }}</mat-label>
+    </div>
+    <form [formGroup]="itemForm">
+
+        @if (itemId) {
+            <mat-form-field appearance="fill" class="dialog-form-field">
+                <mat-label>Id</mat-label>
+                <input type="numeric" matInput disabled [value]="itemId">
+            </mat-form-field>
+        }
+
+        <mat-form-field appearance="fill" class="dialog-form-field">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="name">
+            @if (itemForm.get('name')?.hasError('required')) {
+                <mat-error >Name is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="dialog-form-field">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Placeholder" formControlName="description"></textarea>
+            @if (itemForm.get('description')?.hasError('required')) {
+                <mat-error >Description is required</mat-error>
+            }
+        </mat-form-field>
+
+    </form>
+    <div class="dialog-buttons">
+        <button mat-flat-button color="warn" (click)="onCancelClick()">
+            Cancel
+            <mat-icon>cancel</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" (click)="onSubmitClick()" [disabled]="!itemForm.valid">
+            Save
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>
+
