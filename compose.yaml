@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+
+    basf-challenge-angular:
+        image: 'basf-challenge-angular:latest'
+        build:
+            context: ./basf-challenge-angular
+            dockerfile: ./Dockerfile
+        container_name: basf-challenge-angular
+        depends_on:
+            - basf-challenge-spring
+        ports:
+            - '4200:4200'
+
+    basf-challenge-spring:
+        image: 'basf-challenge-spring:latest'
+        build:
+            context: ./basf-challenge-spring
+            dockerfile: ./Dockerfile
+        container_name: basf-challenge-spring
+        depends_on:
+            - basf-challenge-postgres
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://basf-challenge-postgres:5432/basf-challenge
+        ports:
+            - '8080:8080'
+
+    basf-challenge-postgres:
+        image: 'postgres:latest'
+        environment:
+            - 'POSTGRES_DB=basf-challenge'
+            - 'POSTGRES_PASSWORD=secret'
+            - 'POSTGRES_USER=user'
+        ports:
+            - '5432:5432'
