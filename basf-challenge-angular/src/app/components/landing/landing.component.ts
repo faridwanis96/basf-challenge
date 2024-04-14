@@ -13,6 +13,7 @@ import {
 } from "@angular/material/table";
 import {MatIcon} from "@angular/material/icon";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
+import {MatCard, MatCardContent} from "@angular/material/card";
 
 @Component({
   selector: 'app-landing',
@@ -31,7 +32,9 @@ import {MatSort, MatSortHeader} from "@angular/material/sort";
         MatRowDef,
         MatSort,
         MatSortHeader,
-        MatTable
+        MatTable,
+        MatCardContent,
+        MatCard
     ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
